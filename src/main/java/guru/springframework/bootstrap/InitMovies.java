@@ -16,7 +16,7 @@ public class InitMovies implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         movieRepository.deleteAll()
-                .thenMany(Flux.just("Siles of the Lambdas", "AEon Flux", "Enter the Mono<Void>", "The Fluxxinator",
+                .thenMany(Flux.just("Silence of the Lambdas", "AEon Flux", "Enter the Mono<Void>", "The Fluxxinator",
                                 "BAck to the future", "Meet the fluxes", "Lord of the fluxes")
                         .map(Movie::new)
                         .flatMap(movieRepository::save))
